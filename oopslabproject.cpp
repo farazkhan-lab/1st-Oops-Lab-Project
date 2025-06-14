@@ -12,7 +12,7 @@ class ShoppingSystem {
             cin >> password;
             return (email == "aqibmehmood13w@gmail.com" && password == "password123");
         }
-    
+
         void administratorMenu() {
             while (true) {
                 int choice;
