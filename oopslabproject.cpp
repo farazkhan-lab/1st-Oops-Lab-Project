@@ -1,3 +1,38 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Cart {
+private:
+    string product_codes[100];
+    int quantities[100];
+    int item_count;
+
+public:
+    Cart() {
+        item_count = 0;
+    }
+
+    bool addItem(string code, int quantity) {
+        if (item_count >= 100) return false;
+        product_codes[item_count] = code;
+        quantities[item_count] = quantity;
+        item_count++;
+        return true;
+    }
+
+    void displayCart() {
+        cout << "\nYour Cart:\n";
+        for (int i = 0; i < item_count; i++) {
+            cout << "Product Code: " << product_codes[i] << ", Quantity: " << quantities[i] << endl;
+        }
+    }
+
+    void clearCart() {
+        item_count = 0;
+    }
+};
+
 class ShoppingSystem {
     private:
         Database db;
